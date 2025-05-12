@@ -16,7 +16,7 @@ jobs:
     - name: Deploy via SSH
       uses: appleboy/ssh-action@v0.1.8
       with:
-        host: 65.109.202.15
+        host: 65.109.202.154
         username: root
         key: ${{ secrets.AQRO_DEPLOY_KEY }}
         script: |

@@ -1,0 +1,25 @@
+name: Deploy to Aqro Server
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Repo
+      uses: actions/checkout@v3
+
+    - name: Deploy via SSH
+      uses: appleboy/ssh-action@v0.1.8
+      with:
+        host: 65.109.202.15
+        username: root
+        key: ${{ secrets.AQRO_DEPLOY_KEY }}
+        script: |
+          cd /var/www/aqro
+          git pull origin main
+          echo "Deployment complete."

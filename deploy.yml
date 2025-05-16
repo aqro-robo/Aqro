@@ -1,0 +1,5 @@
+name: Deploy Aqro
+on:
+  push:
+    branches:
+      - main

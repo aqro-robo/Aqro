@@ -18,7 +18,7 @@ jobs:
       with:
         host: 65.109.202.154
         username: root
-        key: ${{ secrets.AQRO_DEPLOY_KEY }}
+        key: ${{ secrets.SSH_PRIVATE_KEY }}
         script: |
           cd /var/www/aqro
           git pull origin main
